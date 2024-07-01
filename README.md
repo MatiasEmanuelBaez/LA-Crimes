@@ -1,5 +1,15 @@
 # LA-Crimes
 
+Considerando el siguiente dataset, realizaremos un trabajo de exploración y análisis de datos, buscando detalles que nos llamen la atención.
+Este conjunto de datos proviene de reportes originales de crímenes que han sido transcritos de papel, por lo tanto, es posible que contengan errores de transcripción.
+    
+> Revisaremos la estructura del dataset, para identificar las variables presentes y entender los datos.
+> 
+> Identificaremos posibles errores de transcripción, tales como duplicados, valores nulos o inconsistencias en los datos.
+> 
+> Visualizaremos de manera clara los hallazgos del análisis.
+
+
 ## Dataset 
 
     https://www.kaggle.com/datasets/sudhanvahg/crimes-in-las-angeles/data
