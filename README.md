@@ -1,53 +1,131 @@
-# LA-Crimes
+# Análisis de crimenes en Los Ángeles
 
-Considerando el siguiente dataset, realizaremos un trabajo de exploración y análisis de datos, buscando detalles que nos llamen la atención.
-Este conjunto de datos proviene de reportes originales de crímenes que han sido transcritos de papel, por lo tanto, es posible que contengan errores de transcripción.
-    
-> Revisaremos la estructura del dataset, para identificar las variables presentes y entender los datos.
-> 
-> Identificaremos posibles errores de transcripción, tales como duplicados, valores nulos o inconsistencias en los datos.
-> 
-> Visualizaremos de manera clara los hallazgos del análisis.
+## 📋 Descripción del Proyecto
 
+Análisis exploratorio y limpieza de datos sobre reportes criminales en Los Ángeles.
+El dataset contiene información detallada de crímenes reportados, con el desafío adicional de posibles errores de transcripción ya que los datos fueron transcritos de formatos físicos originales.
 
-## Dataset 
+## 🎯 Objetivos del Análisis
 
-    https://www.kaggle.com/datasets/sudhanvahg/crimes-in-las-angeles/data
+### 🔍 **Exploración Inicial**
 
+- Revisar la estructura del dataset y comprender las variables disponibles
+- Identificar patrones y tendencias en la criminalidad
+- Analizar distribuciones temporales y geográficas
 
-## Explicación de las columnas del dataset
+### 🧹 **Limpieza de Datos**
 
-**DR_NO - Division of Records Number** Numero oficial de archivo, conformado por año (2 difgitos), area ID y 5 digitos.
+- Detectar y corregir errores de transcripción
+- Identificar valores duplicados, nulos o inconsistentes
+- Validar la consistencia de los datos categóricos
 
-**DATE OCC** Fecha de ocurrencia del crimen (YYYY-MM-DD).
+### 📊 **Visualización**
 
-**AREA** Los Angeles posee 21 estaciones de policia referidas a diferentes areas geograficas. Estasn numeradas de 1 a 21.
-**AREA NAME** Nombre de las 21 areas.
+- Crear visualizaciones claras e informativas
+- Comunicar hallazgos de manera efectiva
+- Identificar insights relevantes
 
-**Rpt Dist No** Codigo de sub area.
+## 📁 Dataset
 
-**Crm Cd** Codigo de crimen cometido.
+**Fuente:** [Kaggle - Crimes in Los Angeles](https://www.kaggle.com/datasets/sudhanvahg/crimes-in-las-angeles/data)
 
-**Crm Cd Desc** Definicion del crimen.
+⚠️ Los datos fueron transcritos de reportes en papel, por lo que pueden contener errores de transcripción que requieren validación.
 
-**Vict Age** Edad de la victima.
+## 🗂️ Diccionario de Datos
 
-**Vict Sex** F: Mujer, M: Hombre, X: Desconocido.
+### Identificadores y Fechas
 
-**Vict Descent** Codigo desendencia: A - Asiatico, B - Negro, C - Chino, D - Camboyano, F - Filipino, G - Guamanian, H - Hispano/Latino/Mexicano, I - Indio Americano/Nativo, J - Japones, K - Koreano, L - Laosiano, O - Otros, P - Isleño del pacifico, S - Samoano, U - Hawaiiano, V - Vietnamita, W - Blanco, X - Desconocido, Z - Indio Asiatico.
+| Columna | Descripción |
+|---------|-------------|
+| **`DR_NO`** | Número oficial de archivo (Año + Área ID + 5 dígitos) |
+| **`DATE OCC`** | Fecha de ocurrencia del crimen (YYYY-MM-DD) |
 
-**Premis Cd** Tipo de estructura, vehiculo o locacion donde ocurrio el crimen.
+### Ubicación Geográfica
 
-**Premis Desc** Definicion de codido de locacion.
+| Columna | Descripción |
+|---------|-------------|
+| **`AREA`** | ID de estación de policía (1-21) |
+| **`AREA NAME`** | Nombre del área geográfica |
+| **`Rpt Dist No`** | Código de sub-área |
+| **`LOCATION`** | Dirección aproximada (anonimizada) |
+| **`LAT` / `LON`** | Coordenadas geográficas |
 
-**Weapon Used Cd** Tipo de arma utilizada en el crimen.
+### Información de la Víctima
 
-**Weapon Desc** Definicion del arma utilizada.
+| Columna | Descripción |
+|---------|-------------|
+| **`Vict Age`** | Edad de la víctima |
+| **`Vict Sex`** | Sexo (F: Mujer, M: Hombre, X: Desconocido) |
+| **`Vict Descent`** | Descendencia/Etnia (Códigos específicos) |
 
-**LOCATION** Direccion del area del crimen, redondeado un rango a la redonda para mantener anonimato.
+### Detalles del Crimen
 
-**LAT** Coordenadas.
+| Columna | Descripción |
+|---------|-------------|
+| **`Crm Cd`** | Código del tipo de crimen |
+| **`Crm Cd Desc`** | Descripción del crimen cometido |
+| **`Premis Cd`** | Código del lugar donde ocurrió |
+| **`Premis Desc`** | Descripción del lugar del crimen |
+| **`Weapon Used Cd`** | Código del arma utilizada |
+| **`Weapon Desc`** | Descripción del arma |
 
-**LON** Coordenadas.
+## 🏛️ Códigos de Descendencia (Vict Descent)
 
----------------------------
+| Código | Descripción |
+|--------|-------------|
+| **A** | Asiático |
+| **B** | Negro |
+| **C** | Chino |
+| **D** | Camboyano |
+| **F** | Filipino |
+| **G** | Guamanian |
+| **H** | Hispano/Latino/Mexicano |
+| **I** | Indio Americano/Nativo |
+| **J** | Japonés |
+| **K** | Coreano |
+| **L** | Laosiano |
+| **O** | Otros |
+| **P** | Isleño del Pacífico |
+| **S** | Samoano |
+| **U** | Hawaiiano |
+| **V** | Vietnamita |
+| **W** | Blanco |
+| **X** | Desconocido |
+| **Z** | Indio Asiático |
+
+## 🛠️ Metodología de Análisis
+
+### Limpieza de Datos
+
+* Validación de formatos de fecha
+* Verificación de rangos de edad lógicos
+* Corrección de categorías inconsistentes
+* Manejo de valores nulos y duplicados
+
+### Análisis Exploratorio
+
+* Distribución temporal de crímenes
+* Patrones geográficos por área
+* Tipos de crímenes más frecuentes
+* Características demográficas de víctimas
+
+### Visualización
+
+* Mapas de calor geográficos
+* Series temporales
+* Gráficos de distribución
+* Análisis de correlaciones
+
+### Tecnologías Utilizadas
+
+* **Python**: Lenguaje principal de análisis
+* **Pandas**: Manipulación y limpieza de datos
+* **NumPy**: Cálculos numéricos
+* **Matplotlib**: Visualizaciones básicas
+* **Seaborn**: Visualizaciones estadísticas
+* **Plotly**: Gráficos interactivos
+* **Jupyter**: Notebooks de análisis
+
+<br>
+
+*`Proyecto desarrollado como parte de un challenge individual de analisis y presentacion de resultados`*
